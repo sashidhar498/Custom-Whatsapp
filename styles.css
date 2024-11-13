@@ -1,0 +1,291 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ece5dd;
+}
+
+.chat-container {
+    position:relative; /* Add relative positioning */
+    width: 330px;
+    margin: auto;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    overflow: hidden; /* Prevent overflow from pseudo-elements */
+}
+
+
+/* Keyframes for pulse effect */
+@keyframes pulse {
+    0% {
+        transform: translateX(-50%) scale(1);
+    }
+    50% {
+        transform: translateX(-50%) scale(1.05);
+    }
+    100% {
+        transform: translateX(-50%) scale(1);
+    }
+}
+.top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#chat-window {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    height: 500px;
+    padding-bottom: 10px;
+    overflow-y: auto;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); /* Adds soft shadow */
+    position: relative;
+}
+
+.message-sent {
+    background-color: #dcf8c6;
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 10px;
+    text-align: right;
+    max-width: 80%;
+    margin-left: auto;
+    word-wrap: break-word;
+    font-size: 16px;
+}
+
+.message-received {
+    background-color: #fff;
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 10px;
+    max-width: 80%;
+    word-wrap: break-word;
+    font-size: 16px;
+}
+.message.received::after {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 10px;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-right-color: #d9d9d9;
+    border-left: 0;
+    border-bottom: 0;
+    margin-top: -5px;
+}
+
+.message-input {
+    display: flex;
+    gap: 10px;
+}
+.message-input button:hover {
+    background-color: #359a85;
+}
+
+#message {
+    flex: 1;
+    padding: 10px;
+    border-radius: 30px;
+    border: 1px solid #ccc;
+    box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    outline: none;
+    width: 10px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #25d366;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.date-separator {
+    text-align: center;
+    margin: 10px 0;
+    color: #888;
+    font-size: 10px;
+}
+
+#toggle-chat {
+    cursor: pointer;
+    font-size: 16px;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.emoji-picker {
+    display: none; /* Initially hidden */
+    position: absolute;
+    border: 1px solid #ccc;
+    background: white;
+    z-index: 10;
+    padding: 5px;
+    bottom: 90px;
+    border-radius: 5px;
+}
+
+#emoji-btn{
+    animation: float 4s ease-in-out infinite;
+}
+#emoji-picker.visible {
+    display: block;
+}
+
+.emoji {
+    cursor: pointer;
+    font-size: 20px;
+    margin: 5px;
+}
+
+.emoji:hover {
+    background-color: #f0f0f0;
+}
+.bubble-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    pointer-events: none; /* Prevent interaction with bubbles */
+    overflow: hidden; /* Prevent bubbles from spilling outside */
+}
+
+.buble {
+    position: absolute;
+    bottom: -50px; /* Start below the view */
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 30%, rgba(165, 217, 234, 0.8) 70%);
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(173, 216, 230, 0.5); /* Soft shadow for depth */
+    animation: rise 10s linear ; /* Animation to rise */
+    opacity: 0.6;
+    z-index: 0;
+}
+
+.bubble {
+    position: absolute;
+    bottom: -50px; /* Start below the viewport */
+    margin-top: 10px;
+    animation: rise 10s linear; /* Animation to rise */
+    z-index: 0;
+}
+
+.bubble::before,
+.bubble::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 52px;
+    height: 80px;
+    border-radius: 50px 50px 0 0;
+    background: radial-gradient(circle, rgba(237, 149, 149, 0.8) 30%, rgba(165, 217, 234, 0.8) 70%);;
+}
+
+.bubble::before {
+    left: 50px;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+
+.bubble::after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+
+@keyframes rise {
+    0% {
+        transform: translateY(0);
+        opacity: 0.6;
+    }
+    10% {
+        transform: translateY(-10vh) translateX(1vw);
+        opacity: 0.6;
+    }
+    20% {
+        transform: translateY(-20vh) translateX(-1vw);
+        opacity: 0.5;
+    }
+    30% {
+        transform: translateY(-30vh) translateX(1vw);
+        opacity: 0.5;
+    }
+    40% {
+        transform: translateY(-40vh) translateX(-1vw);
+        opacity: 0.4;
+    }
+    50% {
+        transform: translateY(-50vh) translateX(1vw);
+        opacity: 0.4;
+    }
+    60% {
+        transform: translateY(-60vh) translateX(-1vw);
+        opacity: 0.3;
+    }
+    70% {
+        transform: translateY(-70vh) translateX(1vw);
+        opacity: 0.3;
+    }
+    80% {
+        transform: translateY(-80vh) translateX(-1vw);
+        opacity: 0.2;
+    }
+    90% {
+        transform: translateY(-90vh) translateX(1vw);
+        opacity: 0.2;
+    }
+    100% {
+        transform: translateY(-100vh) translateX(-1vw);
+        opacity: 0.2;
+    }
+}
+@media (max-width: 600px) {
+    .bubble-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: -50px;
+        bottom: -100px;
+        z-index: 0;
+        pointer-events: none; /* Prevent interaction with bubbles */
+        overflow: hidden; /* Prevent bubbles from spilling outside */
+    }
+    
+}
+@keyframes float {
+    0% {
+        transform: translate(0, 0) scale(1) rotate(0deg);
+    }
+    10% {
+        transform: translate(2px, -2px) scale(1.02) rotate(1deg);
+    }
+    20% {
+        transform: translate(2px, 2px) scale(1) rotate(0deg);
+    }
+    30% {
+        transform: translate(-2px, 2px) scale(1.02) rotate(1deg);
+    }
+    50% {
+        transform: translate(0, 0) scale(1) rotate(0deg);
+    }
+    75% {
+        transform: translate(-5px, 5px) scale(0.98) rotate(-1deg);
+    }
+    100% {
+        transform: translate(0, 0) scale(1) rotate(0deg);
+    }
+}
