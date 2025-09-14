@@ -69,5 +69,3 @@ If you want to make it more realistic:
 ## 📜 License
 
 MIT License © 2025 Sabbu Sashidhar
-
-```
