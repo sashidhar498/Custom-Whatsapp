@@ -1,6 +1,5 @@
 # ✅ Full `README.md` for your WhatsApp GUI Project
 
-````markdown
 # 💬 WhatsApp-like Chat GUI
 
 A lightweight **WhatsApp-style chat GUI** built with **PHP, HTML, JavaScript, and CSS**.  
@@ -27,7 +26,7 @@ Supports multiple people chatting in a single room with one shared password (for
 
 2. **Start PHP server**
 
-   ```bash
+```bash
    php -S localhost:8000
    ```
 
