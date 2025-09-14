@@ -21,8 +21,8 @@ Supports multiple people chatting in a single room with one shared password (for
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/<your-username>/<repo-name>.git
-   cd <repo-name>
+   git clone https://github.com/sashidhar498/Custom-Whatsapp
+   cd <Custom-Whatsapp>
 ````
 
 2. **Start PHP server**
@@ -33,20 +33,6 @@ Supports multiple people chatting in a single room with one shared password (for
 
 3. **Open in browser**
    Visit [http://localhost:8000](http://localhost:8000) and enter the shared password to join the chat.
-
----
-
-## 📂 Project Structure
-
-```
-project/
-│
-├── index.php        # Main entry (chat login & interface)
-├── chat.php         # Handles messages
-├── style.css        # WhatsApp-like styling
-├── script.js        # Frontend chat logic
-└── assets/          # Icons, static files
-```
 
 ---
 
@@ -67,7 +53,7 @@ If you want to make it more realistic:
 
 * **Backend:** PHP (lightweight, no framework)
 * **Frontend:** HTML, CSS, JavaScript
-* **Database:** File-based or MySQL (optional extension)
+* **Database:** File-based or MySQL
 
 ---
 
@@ -76,7 +62,7 @@ If you want to make it more realistic:
 * User-specific login & registration system
 * Chat history saved in a database
 * Private messaging support
-* Emoji & file sharing
+* Emoji 
 * Dark mode
 
 ---
