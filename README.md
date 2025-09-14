@@ -23,7 +23,7 @@ Supports multiple people chatting in a single room with one shared password (for
    ```bash
    git clone https://github.com/sashidhar498/Custom-Whatsapp
    cd <Custom-Whatsapp>
-````
+```
 
 2. **Start PHP server**
 
