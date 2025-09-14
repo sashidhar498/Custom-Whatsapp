@@ -71,7 +71,3 @@ If you want to make it more realistic:
 MIT License © 2025 Sabbu Sashidhar
 
 ```
-
-
-👉 Do you want me to also give you a **small PHP code snippet** that upgrades your **“one password” login** into a **per-user login system with usernames + hashed passwords** (so you can expand your repo securely)?
-```
