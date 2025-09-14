@@ -21,14 +21,14 @@ Supports multiple people chatting in a single room with one shared password (for
 1. **Clone the repository**
    ```bash
    git clone https://github.com/sashidhar498/Custom-Whatsapp
-   cd <Custom-Whatsapp>
-```
+   cd Custom-Whatsapp
+   ```
 
 2. **Start PHP server**
 
 ```bash
    php -S localhost:8000
-   ```
+```
 
 3. **Open in browser**
    Visit [http://localhost:8000](http://localhost:8000) and enter the shared password to join the chat.
